@@ -1,4 +1,4 @@
-ody {
+body {
   font-family: Arial, sans-serif;
   background: #f0f0f0;
   display: flex;
@@ -41,4 +41,55 @@ ody {
   padding: 10px;
   border-radius: 10px;
   border: 1px solid #ccc;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+button {
+  padding: 20px;
+  font-size: 20px;
+  border: none;
+  background: #f9f9f9;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background: #dfe6e9;
+}
+
+.zero {
+  grid-column: span 2;
+}
+body.light {
+  background: #f0f0f0;
+  color: #000;
+}
+
+body.dark {
+  background: #1e1e1e;
+  color: #fff;
+}
+
+body.dark .calculator {
+  background: #2d2d2d;
+  box-shadow: 0 0 20px rgba(255,255,255,0.1);
+}
+
+body.dark input,
+body.dark button {
+  background: #444;
+  color: #fff;
+  border: 1px solid #555;
+}
+
+#themeToggle {
+  margin-bottom: 20px;
+  padding: 10px 15px;
+  font-size: 14px;
 }
