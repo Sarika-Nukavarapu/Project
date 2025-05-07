@@ -5,10 +5,6 @@ function appendValue(val) {
 function clearDisplay() {
   document.getElementById("display").value = "";
 }
-function clearLast() {
-  let display = document.getElementById("display");
-  display.value = display.value.slice(0, -1);
-}
 function calculate() {
   const display = document.getElementById("display");
   try {
@@ -19,3 +15,23 @@ function calculate() {
     display.value = "Error";
   }
 }
+
+function addToHistory(entry) {
+  const historyList = document.getElementById("history");
+  const li = document.createElement("li");
+  li.textContent = entry;
+  historyList.prepend(li);
+}
+function toggleTheme() {
+  const body = document.body;
+  if (body.classList.contains("dark")) {
+    body.classList.remove("dark");
+    body.classList.add("light");
+  } else {
+    body.classList.remove("light");
+    body.classList.add("dark");
+  }
+}
+
+// Default to light mode on load
+document.body.classList.add("light");
